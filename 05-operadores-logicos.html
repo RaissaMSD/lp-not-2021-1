@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
+        'use strict'
+     
+        /* OPERADORES LÓGICOS EM JS
+            && -> E lógico (AND)
+            || -> OU lógico (OR)
+            !  -> NÃO logico (NOT)
+        */
+       let a = 5, b = 10, c = 0
+
+       document.write(a > 1 && b < 15)
+
+       // <br> = break row (quebra de linha)
+       document.write('<br>') 
+       document.write(b === 0 && c < 0)
+
+       // <hr> = horizontal ruler (traço horizontal)
+       document.write('<hr>')
+
+       // TESTANDO O OPERADOR || (pipe pipe)
+       document.write(a === 5 || c!== 0)
+       document.write('<hr>')
+       document.write(b !== 10 || a !== 5)
+
+       document.write('<hr>')
+
+       // TESTANDO O OPERADOR ! (NOT)
+       //Ordem de resolução dos operadores lógicos
+       // 1º: !
+       // 2º: &&
+       // 3º: ||
+       document.write(!(a === 0 && b > 20))
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

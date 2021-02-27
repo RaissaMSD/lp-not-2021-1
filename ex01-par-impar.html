@@ -18,10 +18,11 @@
         */
         let numero = parseInt(prompt("Informe um número inteiro: "))
 
+        // Verificar se o resto da divisão do número por 2 deu 0
         if(isNaN(numero)) {
              alert('Desculpe-me, mas isso que você informou não é um número')
         }
-        else if(numero % 2 == 0 ) {
+        else if(numero % 2 === 0 ) {
             //Posso usar tmb para reforçar ser um número ===
             alert('Esse número é par')
         }
