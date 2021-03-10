@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
+        'use strict'
+    
+        let soma = 0, num
+
+        while(num !== 0) {
+            // Number tem o mesmo efeito que parseFloat
+            num = Number(prompt('Informe um número para somar ou 0 para terminar: '))
+            
+            if(! isNaN(num)) { //Se for um número válido
+                soma += num //Equivale a: soma = soma + num
+
+            }
+        }
+
+        alert(`A soma dos número informados é ${soma}.`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
