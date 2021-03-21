@@ -21,49 +21,18 @@
             5! = 5 * 4 * 3 * 2 * 1
             7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         
         */
-       /*
-        let num = parseFloat(prompt('Informe um número inteiro maior que 1: '))
-        if(isNaN(num > 1)) {
-            alert('Dado inválido')
-        }
-        for(let i = num; i > 1; i--) {
-            num = num * i
-        }
-        alert(`O fatorial é ${num}`)
-        */
-       /*
-        let num = parseInt(prompt("Informe um número inteiro maior que 1: "))
-        function fatorial(num) {
-            
-            for(let i = 2 ; i > 1; i--) {
-                fat *= i
-            }
-        }
-            /*return num
-        }
-        let fat = fatorial(num)
-        
-        alert(`O valor é ${fat}`)
-    */
-        
+       
+        let fat = 1
         let num = parseInt(prompt("Informe um número inteiro: "))
-        for (let i = num; i > 1; i--){
-            num= num * i
-        
-        } alert ('O fatorial é ' +  num)
-
-        function fatorial(num){    // declaracao da função 
-            for(let i = num; i > 1; i--){
-                num *= i    // Equivale a : fat * i
-
-            }
-            return num  //retorno de função
+        if(isNaN(num) || isNaN(num > 1)) {
+            alert('Dado inválido!')
         }
-
-        //chamada de função. o valor retornado pela funcao sera
-        //atribuido á variavel x
-        let x = fatorial(num)
-        alert('o fatorial calculado pela funcao é ' + x)
+        else if (num >=2 ) {
+        for (let i = num; i > 1; i--){
+            fat = fat * i
+            } 
+        alert('O fatorial é ' +  fat)
+        }
     </script>
 </head>
 <body>
