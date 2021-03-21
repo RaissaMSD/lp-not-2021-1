@@ -1,50 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página modelo</title>
+    <title>Pagina modelo</title>
     <script>
-        // Ativa verificações adicionais de variáveis
-        // Modo "chato" do JavaScript
+        //Ativa verificaçõesa adicionais de variaveis
+        //modo 'chato' dO JavaScript
         'use strict'
-    
-        // 5! = 5 * 4 * 3 * 2 * 1 (120)
-        // 4! = 4 * 3 * 2 * 1 (24)
+        
+        //5! = 5 * 4 * 3 * 2 * 1 (120)
+        //4! = 4 * 3 * 2 * 1
 
         let fat5 = 1
-        for(let i = 5; i > 1; i--) {
-            fat5 = fat5 * i
-        }
-        alert('O fatorial de 5 é ' + fat5)
+        for (let i = 5; i > 1; i--){
+            fat5= fat5 * i
+        
+        } alert ('O fatorial de 5 é ' +  fat5)
 
         let fat4 = 1
-        for(let i = 4; i > 1; i--) {
-            fat4 = fat4 * i
-        }
-        alert('O fatorial de 4 é ' + fat4)
+        for (let i = 4; i > 1; i--){
+            fat4= fat4 * i
+        
+        } alert ('O fatorial de 4 é ' +  fat4)
 
-        // Princípio DRY = DON'T REPEAT YOURSELF (não se repita)
+        //principio DRY = DON'T REPEAT YOURSELF (nao se repete)
 
-        // Fução é um trecho do código que é escrito apenas uma vez e
-        // pode ser invocado (executado) várias vezes
+        // função é um trecho de código que é escrito apenas um vez e
+        //pode ser  invocado (executado) vária vezes
 
-        // fatorial -> nome da função
-        // num -> parâmetro ou argumento da função
-        function fatorial(num) {
-            let fat = 1
-            for(let i = num; i > 1; i--) {
-                fat += i            //Equivale a: fat = fat * i
+        // fatorial = nome da função 
+        // num = parâmetro ou argumento da função
+        function fatorial(num){    // declaracao da função 
+            for(let i = num; i > 1; i--){
+                fat *= i    // Equivale a : fat * i
+
             }
-            return fat              // Retorno da função
+            return fat  //retorno de função
         }
 
-        // Chamada de função. O valor retornado pela função será
-        // atribuído à variável x.
+        //chamada de função. o valor retornado pela funcao sera
+        //atribuido á variavel x
         let x = fatorial(5)
         let y = fatorial(4)
-        alert('O fatorial de 5 calculado pela função é ' + x)
-        alert('O fatorial de 4 calculado pela função é ' + y)
+        alert('o fatorial de 5 calculado pela funcao é ' + x)
+        alert('o fatorial de 4 calculado pela funcao é ' + y)
+
+        // função para calcular  a area  de uma das seguintes formas geometricas:
+        //quadrilateros, triangulos, e do elipse
+        function calcArea (base, altura, forma){
+            let area
+            switch (forma){
+                case 'Q': 
+                    area = base * altura
+                    break
+                case 'T':
+                    area = base * altura / 2
+                    break
+                case 'E':
+                    area = (base/2) * (altura/2) * Math.PI
+                    break
+                default:
+                    area = NaN
+
+            }
+            return area
+        }
+
+        let areaTerreno = calcArea(8,25, 'Q')
+        alert ('area do terreno:' + areaTerreno)
+
+        alert('area do triangulo:' + calcArea(7,5, 'T'))
+
+        alert('area da elipse: ' + calcArea(2,3, 'E'))
+
+
+
+
     </script>
 </head>
 <body>
