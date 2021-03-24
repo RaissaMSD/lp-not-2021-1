@@ -28,24 +28,26 @@
         
         let num1
         let num2
-        let resultado
-       
+        let maior
+        let menor
+        let resultado = 0
         do {
             num1 = parseInt(prompt('Informe um número:'))
             num2 = parseInt(prompt('Informe outro número:'))
-        } while(isNaN(num1) || isNaN(num2) || isNaN(num1 != num2))
-        /*
-        for(let soma = 0; soma != 0; soma++) {
-            resultado = num1,num2
-            alert(`${resultado} + ${num1} + ${num2}`) 
-            }
-            */
-        for(resultado = 0; num1 < num2; num1++)
+        } while(isNaN(num1) || isNaN(num2) || (num1 === num2))
         
-        if (num1 < num2) {
-            
-        alert(num1 + num2) 
+        if (num1<num2) {
+            menor = num1
+            maior = num2
         }
+        else  {
+            menor = num2
+            maior = num1
+        }
+        for(let x = menor; x <= maior; x++) {
+            resultado += x
+        }
+        document.write(`O resultado da somatória é ${resultado}`)
        
     </script>
 </head>
