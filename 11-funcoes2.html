@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
+        'use strict'
+    
+        /******************************************
+         * *FUNÇÃO SEM RETORNO
+         * 
+         * Geralmente, funções retornam um valor para quem as chama
+         * por meio da palavra-chave return. No entanto, existem funções
+         * que apenas desempenham uma tarefa, sem retornar valor algum.
+         * ****************************************/
+
+         function traco(tamanho) {
+             for (let i =1; i <= tamanho; i++) {
+                 document.write('-')
+             }
+             document.write('<br>') // pula linha
+             //Note que, nesta função, não há a palavra-chave return
+         }
+9
+         // Chamadas da função. Note também que a função NÃO é atribuida a uma variável
+         traco(25)
+         traco(50)
+         traco(15)
+
+         /******************************************
+          * FUNÇÃO SEM PARÂMETRO
+          * 
+          * Uma função (independente se retorna ou não algum valor) pode
+          * não receber parâmetro algum. Nesse caso, ficam os parênteses vazios
+          * à frente do nome da função
+          * **************************************/
+
+        function agora() {   //Retorna a hora atual do computador
+            let diaAtual = new Date
+            // Veja, na linha abaixo, outras três funções que também não recebem parâmetros
+            return diaAtual.getHours() + ':' + diaAtual.getMinutes() + ':' + diaAtual.getSeconds()
+        }
+        // Chama a função e mostra o resultado em um alert()
+        alert(agora())
+
+        //Função sem parâmetro e sem valor de retorno
+        function msgErro() { //Declaração da função
+            alert('ERRO INESPERADO. Contate o suporte técnico pelo ramal XXX.')
+        }
+
+        msgErro() // Chana a função
+
+        /**********************************
+         * FUNÇÕES DETERMINÍSTICAS x FUNÇÕES NÃO-DETERMINÍSTICAS
+         * 
+         * Função DETERMINÍSTICA -> dado os mesmos argumentos, retornará sempre
+         * o mesmo resultado
+         * 
+         * Função NÃO-DETERMINÍSTICA -> o valor de retorno independe do(s) parâmetro(s)
+         * **********************************/
+
+         // Exemplo de função determinística
+        function potencia(base, expoente) {
+            return base ** expoente // dois asteristicos significa elevado
+        }
+
+        alert(potencia(2,5))  //32, sempre
+        alert(potencia(3,3))  //27, sempre
+
+        // A função agora(), declarada mais acima, é um exemplo de função não-determinística.
+        // A cada execução, retonará um resultado diferente.
+
+        // Um exemplo de função não-determinística fornecida pelo próprio Javascript é a
+        // Math.random(). A cada execução, ela retornará um número diferente, na faixa eentre 0 e 1.
+        alert('Número aleatório: ' + Math.random())
+        alert('Número aleatório: ' + Math.random())
+
+        // Função não-determinística que gera um número aleatório inteiro entre 1 e 60.
+        //
+        function megasena() {
+            // Os números gerados por Math.random() incluem o número 0, mas não incluem o número 1.
+            // Portanto, ao multiplicar por 60, sonseguimos números entre 0 e 59.
+            // Para corrigir esse problema, adicionamos 1 ao resultado.
+            // Para retirar as casas decimais, usamos a função Math.floor()
+            return Math.floor(Math.random() * 60 + 1)
+        }
+        // Eventualmente, podem sair números repetidos
+        alert('1º Número para a megasena: ' + megasena())
+        alert('2º Número para a megasena: ' + megasena())
+        alert('3º Número para a megasena: ' + megasena())
+        alert('4º Número para a megasena: ' + megasena())
+        alert('5º Número para a megasena: ' + megasena())
+        alert('6º Número para a megasena: ' + megasena())
+
+        for(let i = 1; i <=6; i++) {
+            alert(i + 'º número para a mensagem: ' + megasena())
+        }
+
+        /***************************************************
+         * *FUNÇÃO PARÂMETRO OPCIONAL
+         * 
+         * O(s) último(s) parâmetros de uma função podem ser transformados em
+         * parâmetros opcionais, caso se forneça um valor padrão a ser utilizado
+         * no caso de esse(s) parâmetro(s) não ter(em)sido passado(s).
+         * ***********************************************/
+
+         // O parâmetro forma foi transformado em picional
+
+         function calcArea (base, altura, forma){
+            let area
+            switch (forma){
+                case 'Q': 
+                    area = base * altura
+                    break
+                case 'T':
+                    area = base * altura / 2
+                    break
+                case 'E':
+                    area = (base/2) * (altura/2) * Math.PI
+                    break
+                default:
+                    area = NaN
+
+            }
+            return area
+        }
+
+        let areaTerreno = calcArea(8,25, 'Q')
+        alert ('area do terreno:' + areaTerreno)
+
+        alert('area do triangulo:' + calcArea(7,5, 'T'))
+
+        alert('area da elipse: ' + calcArea(2,3, 'E'))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
